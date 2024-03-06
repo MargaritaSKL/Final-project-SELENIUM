@@ -13,7 +13,7 @@ class LoginPageLocators:
 class ProductPageLocators: # уникальные селекторы
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     BOOK_NAME = (By.CSS_SELECTOR, ".product_main > h1")
-    MESSAGE_ABOUT_ADDING = (By.CSS_SELECTOR, 'div.alert:nth-child(1) strong')
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR,".alert-success")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main > .price_color")
     BOOK_NAME_FOR_CHECK = (By.CSS_SELECTOR, "#messages > .alert-success:nth-child(1) > .alertinner strong")
     BOOK_PRICE_FOR_CHECK = (By.CSS_SELECTOR, "#messages > .alert-info > .alertinner p:nth-child(1) strong")
