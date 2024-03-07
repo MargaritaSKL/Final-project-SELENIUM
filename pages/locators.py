@@ -8,6 +8,10 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
+    EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    PASSWORD1 = (By.CSS_SELECTOR, "#id_registration-password1")
+    PASSWORD2 = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "[name = 'registration_submit']")
 
 
 class ProductPageLocators:    # уникальные селекторы
@@ -22,6 +26,7 @@ class ProductPageLocators:    # уникальные селекторы
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ' .basket-mini .btn-default[href*="basket/"]')
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class BasketPageLocators:
