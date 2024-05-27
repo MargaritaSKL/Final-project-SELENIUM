@@ -10,6 +10,7 @@ class BasePage:
     def __init__(self, browser, url, timeout=5):
         self.browser = browser
         self.url = url
+        # неявное ожидание
         self.browser.implicitly_wait(timeout)
 
     def should_be_authorized_user(self):
@@ -33,6 +34,7 @@ class BasePage:
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
+        # перехватываем исключение
         except NoSuchElementException:
             return False
         return True
@@ -52,6 +54,7 @@ class BasePage:
             print("No second alert presented")
 
     def is_not_element_present(self, how, what, timeout=4):
+        # проверка, что элемент не появляется на странице в течение заданного времени
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))
         except TimeoutException:

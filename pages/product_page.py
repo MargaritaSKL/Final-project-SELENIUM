@@ -15,20 +15,24 @@ class ProductPage(BasePage):
         assert product_name in message, "Message about adding is not presented"
 
     def should_be_same_book_name(self):
+        # проверка сообщения о добавлении в корзину книги с необходимым названием
         book_name_for_check = self.browser.find_element(*ProductPageLocators.BOOK_NAME_FOR_CHECK)
         book_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME)
         time.sleep(1)
         assert book_name.text == book_name_for_check.text, "Wrong name!"
 
     def should_be_same_book_price(self):
+        # проверка сообщения о цене товара в корзине
         book_price_for_check = self.browser.find_element(*ProductPageLocators.BOOK_PRICE_FOR_CHECK)
         book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE)
         assert book_price.text == book_price_for_check.text, "Wrong price!"
 
     def should_not_be_success_message(self):
+        # проверка, что элемент не появился, так как не должен был
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
 
     def should_success_message_disappeare(self):
+        # проверка, что элемент исчез
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
             "Success message is presented, but should not be"
